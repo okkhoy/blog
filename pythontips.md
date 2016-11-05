@@ -16,3 +16,5 @@ except Exception as ex:
     message = template.format(type(ex).__name__, ex.args)
     print message
 ```
+
+First thing to do is never have an empty `except` statement, but catch an exception. The exception object gives us a lot of information. `type` information is available via Python's `type()` call (`type(ex).__name__` gives the name of the exception that occured in the above snippet), the arguments (`ex.args` in the above snippet) contain details of the exception that occurred. This works for any custom exceptions that you implement.
