@@ -17,4 +17,29 @@ except Exception as ex:
     print message
 ```
 
-First thing to do is never have an empty `except` statement, but catch an exception. The exception object gives us a lot of information. `type` information is available via Python's `type()` call (`type(ex).__name__` gives the name of the exception that occured in the above snippet), the arguments (`ex.args` in the above snippet) contain details of the exception that occurred. This works for any custom exceptions that you implement.
+First thing to do is never have an empty `except` statement, but catch an exception. The exception object gives us a lot of information. `type` information is available via Python's `type()` call (`type(ex).__name__` gives the name of the exception that occurred in the above snippet), the arguments (`ex.args` in the above snippet) contain details of the exception that occurred. This works for any custom exceptions that you implement.
+
+Source: [This SO question](http://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occured)
+
+## How to iterate two lists at once?
+
+This is a pretty common scenario if you are working with some time series data indexed by time-stamp or some index column. You will have to iterate both index and data columns at once. We can do this using Python's `zip` method. If the data you are working with is large, you can use `izip` from `itertools` package in Python 2.x. In Python 3.x `zip` by default returns an iterator.
+
+Here is how we do it in Python 2.x.
+
+Let us say you have two lists, `index` and `data`.
+
+```python
+# Python 2.x yields a zipped list 
+# Python 3.x yields an iterator
+for i,d in zip(index, data):
+    do_something(index, data)
+###########################################
+
+# for Python 2.x to get an iterator
+import itertools
+for i,d in itertools.izip(index, data):
+    do_something(index, data)
+```
+
+Source: [SO again](http://stackoverflow.com/questions/1663807/how-can-i-iterate-through-two-lists-in-parallel-in-python)
