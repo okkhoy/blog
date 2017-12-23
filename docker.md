@@ -30,8 +30,8 @@
   - Test the installation
     > `sudo docker run hello-world`<br>
     This should show something like:<br>
-    > `Unable to find image 'hello-world:latest' locally <br>
-      ... <br>
-      Hello from Docker! <br>
-      This message shows that your installation appears to be working correctly. <br>
-      ...`
+    > `Unable to find image 'hello-world:latest' locally` <br>
+    >  `...` <br>
+    >  `Hello from Docker!` <br>
+    >  `This message shows that your installation appears to be working correctly.` <br>
+    >  `...`
