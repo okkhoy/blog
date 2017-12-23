@@ -12,3 +12,26 @@
   > `sudo apt-get update` <br>
   > `sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual`
 
+### Install Docker-Community Edition
+
+- Install packages to allow `apt` over `https`
+  > `sudo apt-get install apt-transport-https ca-certificates curl software-properties-common`
+- Get the Docker GPG-Key
+  > `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+- Add the stable Docker repositories and update
+  > `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"` <br>
+  > `sudo apt-get update`
+- Install Docker CE
+  - Search for the version to install
+    > `apt-cache madison docker-ce`
+  - Install the specific version using the output of above
+    > `sudo apt-get install docker-ce=<Version>` <br>
+    > E.g. `sudo apt-get install docker-ce=17.09.1~ce-0~ubuntu` 
+  - Test the installation
+    > `sudo docker run hello-world`<br>
+    This should show something like:
+    > `Unable to find image 'hello-world:latest' locally <br>
+      ... <br>
+      Hello from Docker! <br>
+      This message shows that your installation appears to be working correctly. <br>
+      ...`
