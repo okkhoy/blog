@@ -29,7 +29,7 @@
     > E.g. `sudo apt-get install docker-ce=17.09.1~ce-0~ubuntu` 
   - Test the installation
     > `sudo docker run hello-world`<br>
-    This should show something like:
+    This should show something like:<br>
     > `Unable to find image 'hello-world:latest' locally <br>
       ... <br>
       Hello from Docker! <br>
