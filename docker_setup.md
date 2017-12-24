@@ -1,5 +1,6 @@
-# Docker Quick Reference Guide
+# Installing Docker
 
+In this part let us look at how to set up Docker on Linux.
 
 ## Setting up Docker on Linux
 (Source: [Docker installation instructions](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#upgrade-docker-ce))
