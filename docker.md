@@ -2,7 +2,7 @@
 
 
 ## Setting up Docker on Linux
-(Source: `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#upgrade-docker-ce`)
+(Source: [Docker installation instructions](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#upgrade-docker-ce))
 
 ### Pre-requisites
 
