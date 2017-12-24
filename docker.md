@@ -28,12 +28,13 @@
     > `sudo apt-get install docker-ce=<Version>` <br>
     > E.g. `sudo apt-get install docker-ce=17.09.1~ce-0~ubuntu` 
   - Test the installation
-    > `sudo docker run hello-world`<br>
+    > `sudo docker run hello-world`
+    
     This should show something like:<br>
-    > ```
-       Unable to find image 'hello-world:latest' locally <br>
-    >  ... <br>
-    >  Hello from Docker! <br>
-    >  This message shows that your installation appears to be working correctly. <br>
+    > ``` 
+    >  Unable to find image 'hello-world:latest' locally 
     >  ...
-    > ```
+    >  Hello from Docker!
+    >  This message shows that your installation appears to be working correctly.
+    >  ... ```
+
