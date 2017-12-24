@@ -38,3 +38,15 @@
     >  This message shows that your installation appears to be working correctly.
     >  ... ```
 
+### Post Installation
+
+- One of the important considerations/concerns of Docker is that [containers need to be run as `root`](https://docs.docker.com/engine/installation/linux/linux-postinstall/).
+- We can set Docker to run as non-root as follows.
+  - Docker creates a group called `docker` on installation 
+    > If not created use `sudo groupadd docker` to create the `docker` group.
+  - Add the users you want to be able to create and use containers to the `docker` group
+    > `sudo usermod -aG docker <username>`
+  - Log out of the session and log back in for the group change to take effect. Verify that you can run `docker` as non-root
+    > `docker run hello-world` should return an output as above.
+  - Some possible error conditions and resolutions are posted just above [this section](https://docs.docker.com/engine/installation/linux/linux-postinstall/#configure-docker-to-start-on-boot) in the documentation.
+
