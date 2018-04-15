@@ -24,3 +24,41 @@ If you have formatted the external drive (or any media for that matter) as `exFA
 - Next, `exFAT` doesn't support permissions, hence, using `-a` flag fails with `function not implemented` error. 
 To overcome this, we need to remove `pgo` switches and explicitly specify the flags for `rsync`.
   - `rsync -rltDvP source/ destination`
+  
+# Touchpad troubles in Ubuntu
+
+It is quite annoying when you are typing and accidentally the cursor moves haywire because your palm contacted the touch pad. I wanted to disable the touchpad completely when I type.
+On a Ubuntu machine you can do the following.
+
+- First get a list of all input devices
+  `xinput list`
+- It shoud show the output similar to below
+
+```
+    ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+    ⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+    ⎜   ↳ DualPoint Stick                         	id=13	[slave  pointer  (2)]
+    ⎜   ↳ Logitech USB Receiver                   	id=16	[slave  pointer  (2)]
+    ⎜   ↳ AlpsPS/2 ALPS DualPoint TouchPad        	id=12	[slave  pointer  (2)]
+    ⎣ Virtual core keyboard                   	id=3	[master keyboard (2)]
+        ↳ Virtual core XTEST keyboard             	id=5	[slave  keyboard (3)]
+        ↳ Power Button                            	id=6	[slave  keyboard (3)]
+        ↳ Video Bus                               	id=7	[slave  keyboard (3)]
+        ↳ Power Button                            	id=8	[slave  keyboard (3)]
+        ↳ Sleep Button                            	id=9	[slave  keyboard (3)]
+        ↳ Laptop_Integrated_Webcam_HD             	id=10	[slave  keyboard (3)]
+        ↳ AT Translated Set 2 keyboard            	id=11	[slave  keyboard (3)]
+        ↳ Dell WMI hotkeys                        	id=14	[slave  keyboard (3)]
+        ↳ Logitech USB Receiver                   	id=15	[slave  keyboard (3)]
+```
+- Get the id of the touch pad (here it is 12)
+- Now disable the touch pad using the command below
+  `xinput set-prop 12 "Device Enabled" 0`
+  OR
+  `xinput --disable 12`
+
+- To re-enable the touch pad, you can set the flag to 1 as shown:
+  `xinput set-prop 12 "Device Enabled" 1`
+  OR
+  `xinput --enable 12`
+
